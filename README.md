@@ -14,7 +14,7 @@ This project demonstrates how to extend Codex data on Ceramic, using a remote Or
 
 ### This project
 
-Perform these steps to create streams for your new model:
+Perform these steps to create streams for your new model. Have the `Context` tab open in OrbisDB, as you need some configuration values from there.
 
 1. Run `npm run createEnv` and follow instructions
 2. Install deps: `npm ci`
