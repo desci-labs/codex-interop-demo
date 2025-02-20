@@ -1,34 +1,53 @@
 import { catchError } from "@useorbis/db-sdk/util";
 import { orbis } from "./index.js";
 
-// TODO: set to your model ID from OrbisDB Studio
-const METADATA_MAPPING =
-  "kjzl6hvfrbw6c5ggst6n2v4xkey99ik4el9ag71e34xclnh7ttyx4bqq8rvbpuw";
+/**
+ * WARN: READ ME FIRST!
+ *
+ * This file helps you create data instances of the model you created in
+ * Orbis Studio. The example below illustrates how one could structure a
+ * (basic) representation of a public peer review.
+ *
+ * Follow the instructions in the TODO comments to adapt it to *your* model.
+*/
 
-// TODO: define the type
-type MetadataMapping = {
+/**
+ * TODO: replace with the ID of the model you created in Orbis Studio
+*/
+const MY_MODEL_ID = "kjzl6hvfrbw6c5ggst6n2v4xkey99ik4el9ag71e34xclnh7ttyx4bqq8rvbpuw";
+
+/**
+ * TODO: replace fields so it matches the properties from the model you
+ * created in Orbis Studio
+*/
+type MyModel = {
   researchObjectId: string;
   schemaOrgEntity: string;
   contentJson: string;
 };
 
-// TODO: fill with content
-const mappings: MetadataMapping[] = [
+/**
+ * TODO: replace with content matching the model you defined.
+ * Optionally, add more objects to create more at the same time.
+*/
+const mappings: MyModel[] = [
   {
-    researchObjectId:
-      "kjzl6kcym7w8y93uqg1vag38ck27w5jawmydgqsu6ky6nj5sf4yspzsrdhbika2",
+    researchObjectId: "kjzl6kcym7w8y93uqg1vag38ck27w5jawmydgqsu6ky6nj5sf4yspzsrdhbika2",
     schemaOrgEntity: "Review",
     contentJson: JSON.stringify({
       positiveNotes: "Great methodology",
       negativeReview: "Lacks data and code for reproducibility",
     }),
-  },
+  }
 ];
 
-// This is called from index.ts, creating the documents defined above
+/**
+ * This is automatically called when running `npm start`/`index.ts`,
+ * creating the data instances you defined defined above
+*/
 export const makeInserts = async () => {
   const insertStatement = orbis
-    .insertBulk(METADATA_MAPPING)
+    .insertBulk(MY_MODEL_ID)
     .values(mappings)
     .context(process.env.ORBIS_CONTEXT);
 
@@ -44,4 +63,6 @@ export const makeInserts = async () => {
   }
 
   console.log("Results:", JSON.stringify(result, undefined, 2));
-};
+}
+
+

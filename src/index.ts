@@ -36,5 +36,5 @@ if (localDid !== orbisEnv) {
   throw new Error("PRIVATE_KEY DID doesn't match ORBIS_ENVIRONMENT");
 }
 
-// TODO: edit create.ts with your model and data
+// TODO: remember to edit src/create.ts with your model and data!
 await makeInserts();

@@ -4,22 +4,30 @@ This project demonstrates how to extend Codex data on Ceramic, using a remote Or
 
 ## Instructions
 
+Clone this repo with `git clone https://github.com/desci-labs/codex-interop-demo.git`,
+then follow the instructions below.
+
 ### OrbisDB
 
-1. Make sure you have Metamask
+1. Make sure you have the Metamask extension in your browser.
 2. Visit https://studio.useorbis.com, authenticate, and wait for it to create your indexer.
-3. Under `Plugins`, install the CODEX one
-4. Check `Data`, you should see the production `research_object` table
-5. Under `Model builder`, define a model for something you want to associate with a research object (attestation, review, metadata, etc)
+3. Under `Plugins`, install the CODEX one.
+4. Check `Data`, you should see the production `research_object` table.
+5. Under `Model builder`, define a model for something you want to associate with a research object (attestation, review, metadata, etc).
 
 ### This project
 
-Perform these steps to create streams for your new model. Have the `Context` tab open in OrbisDB, as you need some configuration values from there.
+First, you need to set two local configuration values by running `npm run createEnv`. It will prompt your for two things:
+- The environment ID from the `Contexts` page in Orbis Studio.
+- The private key from your wallet.
+  - Used to sign the data published to Ceramic.
+  - It never leaves your computer.
 
-1. Run `npm run createEnv` and follow instructions
-2. Install deps: `npm ci`
-3. Edit `src/create.ts` according to the instructions therein
-4. Run `npm start` to publish the content
+
+Then, perform these steps to create streams for your new model:
+1. Install deps: `npm ci`.
+2. Edit `src/create.ts` carefully, *according to the instructions therein*.
+3. Run `npm start` to publish data instances of your newly created model.
 
 ## Results
 
