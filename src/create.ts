@@ -28,7 +28,11 @@ type MyModel = {
 
 /**
  * TODO: replace with content matching the model you defined.
- * Optionally, add more objects to create more at the same time.
+ * ALSO: pick some random stream_id to use for researchObjectId.
+ *
+ * Optionally, add more objects to create multiple at the same time.
+ *
+ * When this is done, you can run `npm start` 🎊
 */
 const mappings: MyModel[] = [
   {
