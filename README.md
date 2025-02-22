@@ -2,6 +2,12 @@
 
 This project demonstrates how to extend Codex data on Ceramic, using a remote OrbisDB instance at https://studio.useorbis.com.
 
+## Prerequisites
+- functional code editor
+- NodeJS >20
+- git
+- Metamask browser extension
+
 ## Instructions
 
 Clone this repo with `git clone https://github.com/desci-labs/codex-interop-demo.git`,
@@ -23,6 +29,8 @@ First, you need to set two local configuration values by running `npm run create
   - Used to sign the data published to Ceramic.
   - It never leaves your computer.
 
+Note: if the script isn't playing nice, you can copy `.env.example` to `.env` and fill it manually 💡
+
 
 Then, perform these steps to create streams for your new model:
 1. Install deps: `npm ci`.
@@ -32,5 +40,12 @@ Then, perform these steps to create streams for your new model:
 ## Results
 
 - You should be able to see the data indexed by your new model under the Data tab in the studio.
-- If you click `Open Editor`, you can query it together with `research_object` using `join`
+- If you click `Open Editor`, you can query it together with `research_object` using SQL
+  - If you click `Manage relations` on your table and fill in the values, you can use GraphQL too!
 - This demonstrates how new models can extend the functionality of Codex.
+
+Example query:
+```sql
+select * from research_object
+inner join your_model;
+```
