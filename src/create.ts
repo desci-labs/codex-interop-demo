@@ -14,7 +14,7 @@ import { orbis } from "./index.js";
 /**
  * TODO: replace with the ID of the model you created in Orbis Studio
 */
-const MY_MODEL_ID = "kjzl6hvfrbw6c5ggst6n2v4xkey99ik4el9ag71e34xclnh7ttyx4bqq8rvbpuw";
+const MY_MODEL_ID = "kjzl6hvfrbw6c89rybe6ua17b3qxbqlmon84k2kcqvc7z2a6u81jci25mcj1azy";
 
 /**
  * TODO: replace fields so it matches the properties from the model you

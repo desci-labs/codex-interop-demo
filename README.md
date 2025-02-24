@@ -46,6 +46,7 @@ Then, perform these steps to create streams for your new model:
 
 Example query:
 ```sql
-select * from research_object
-inner join your_model;
+select * from kjzl6hvfrbw6c89rybe6ua17b3qxbqlmon84k2kcqvc7z2a6u81jci25mcj1azy md
+left join kjzl6hvfrbw6cbe01it6hlcwopsv4cqrqysho4f1xd7rtqxew9yag3x2wxczhz0 ro
+on md."researchObjectId" = ro.stream_id;
 ```
